@@ -1,19 +1,25 @@
 //TODO: inventory component with list of ingredients
+//TODO: button functionality
 
-function Inventory({ inventory }) {
-  
+import Ingredient from "./ingredient"
+
+function Inventory({ inventory, setInventory }) {
+
+
+
   return (
     <>
       <p>Inventory</p>
       {inventory.length ? (
         inventory.map((ingredient) => {
             return (
-                <li key={ingredient.strIngredient1}>{ingredient.strIngredient1}</li>
+                <Ingredient key={ingredient.strIngredient1} ingredient={ingredient} inventory={inventory} setInventory={setInventory}></Ingredient>
             )
         })
       ) : (
         <p>No ingredients!</p>
       )}
+      <button>Add Ingredient</button>
     </>
   )
 }

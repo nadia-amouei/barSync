@@ -13,3 +13,6 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+
+//TODO: add routes to pages

@@ -18,7 +18,7 @@ export const mockInventory = [
   },
 ];
 
-const ingredientList = [
+export const mockIngredientList = [
   {
     strIngredient1: "Vodka",
   },

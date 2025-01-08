@@ -1,0 +1,1 @@
+//TODO: inventory component with list of ingredients

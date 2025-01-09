@@ -35,7 +35,6 @@ function IngredientSearch() {
     } catch (error) {
       console.log(error);      
     }
-    setFullIngredientList(mockIngredientList)
   }
   
   async function getInventory() {

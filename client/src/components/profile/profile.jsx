@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import Inventory from "./inventory/inventory"
 import RecipeList from "./recipes/recipe-list"
 
@@ -8,7 +9,9 @@ function Profile({ inventory, setInventory, getInventory }) {
     <>
       <p>Profile</p>
       <Inventory inventory={inventory} setInventory={setInventory} getInventory={getInventory}></Inventory>
-      <RecipeList></RecipeList>
+      <Link to={"/recipes"}>
+        <button>Make something?</button>
+      </Link>
     </>
   )
 }

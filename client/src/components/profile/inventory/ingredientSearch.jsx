@@ -15,10 +15,12 @@ function IngredientSearch() {
 
 
   function getFullIngredientList() {
+    console.log("getfullingredientlist triggered")
     setFullIngredientList(mockIngredientList)
   }
   async function getInventory() {
     const url = "http://localhost:3000/inventory";
+    console.log("get inventory triggered")
     try {
       const response = await fetch(url);
       const fetchInventory = await response.json();
@@ -41,8 +43,12 @@ function IngredientSearch() {
   }
 
   useEffect(() => {
-    getInventory();
-    getFullIngredientList();
+    if (!inventory.length) {
+      getInventory();
+    }
+    if (!fullIngredientList.length) {
+      getFullIngredientList();
+    }
     filterList();
   }, [searchText]);
 

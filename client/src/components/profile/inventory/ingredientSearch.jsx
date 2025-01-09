@@ -29,8 +29,8 @@ function IngredientSearch() {
     try {
       const response = await fetch(url);
       const fetchResponse = await response.json();
-      if(fetchResponse.length) {
-      setFullIngredientList(fetchResponse);
+      if(fetchResponse.drinks.length) {
+      setFullIngredientList(fetchResponse.drinks);
       }
     } catch (error) {
       console.log(error);      

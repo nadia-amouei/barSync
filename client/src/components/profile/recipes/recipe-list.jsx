@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import RecipeDetail from "./recipe-detail"
+import Navbar from "../../nav-bar/nav-bar";
 
 function RecipeList() {
   const [inventory, setInventory] = useState([]);
@@ -33,7 +34,7 @@ function RecipeList() {
       console.log(error);
     }
   }
-  
+  //TODO: need some way of dealing with 'none found'
   async function getRecipes () {
     const url = "http://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i="
     const filter = recipeFilters.join();
@@ -61,6 +62,7 @@ function RecipeList() {
 
   return (
     <>
+    <Navbar></Navbar>
       <p>select the ingredients you would like to use!</p>
       <div>
         {inventory.length ? (inventory.map((ingredient) => {

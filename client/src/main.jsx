@@ -20,3 +20,4 @@ createRoot(document.getElementById('root')).render(
 
 
 //TODO: add routes to pages
+//TODO: add route params to go to recipe detail

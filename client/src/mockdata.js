@@ -1,4 +1,5 @@
 //TODO: populate with mock data
+//TODO: when retrieving from API this will need changing to an array with just the name of the ingredient
 
 export const mockInventory = [
   {

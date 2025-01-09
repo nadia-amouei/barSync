@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import Profile from './components/profile/profile'
-import Navbar from './components/nav-bar/nav-bar'
-import { mockInventory } from './mockdata';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Profile from "./components/profile/profile";
+import Navbar from "./components/nav-bar/nav-bar";
+import { mockInventory } from "./mockdata";
 
 function App() {
   const [inventory, setInventory] = useState([]);
@@ -28,9 +28,13 @@ function App() {
     <>
       <Navbar></Navbar>
       <p>App jsx!</p>
-      <Profile inventory={inventory} setInventory={setInventory} getInventory={getInventory}></Profile>
+      <Profile
+        inventory={inventory}
+        setInventory={setInventory}
+        getInventory={getInventory}
+      ></Profile>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

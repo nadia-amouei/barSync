@@ -1,6 +1,7 @@
 //TODO: inventory component with list of ingredients
 //TODO: button functionality
 
+import { Link } from "react-router"
 import Ingredient from "./ingredient"
 
 function Inventory({ inventory, setInventory }) {
@@ -19,7 +20,9 @@ function Inventory({ inventory, setInventory }) {
       ) : (
         <p>No ingredients!</p>
       )}
+      <Link to={'/ingredientsearch'}>
       <button>Add Ingredient</button>
+      </Link>
     </>
   )
 }

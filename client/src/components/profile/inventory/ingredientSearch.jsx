@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { mockIngredientList } from "../../../mockdata"
+import { mockIngredientList, mockInventory } from "../../../mockdata"
 import Navbar from "../../nav-bar/nav-bar";
+import Ingredient from "./ingredient"
 
 //TODO: sort routes out and test this
 
@@ -8,20 +9,30 @@ import Navbar from "../../nav-bar/nav-bar";
 function IngredientSearch() {
   const [fullIngredientList, setFullIngredientList] = useState([])
   const [searchText, setSearchText] = useState("");
+  const [inventory, setInventory] = useState([]);
+  const [filteredIngredientList, setFilteredIngredientList] = useState([]);
+
 
   function getFullIngredientList() {
     setFullIngredientList(mockIngredientList)
   }
+  function getInventory() {
+    setInventory(mockInventory);
+  }
 
   function handleChange(event) {
-    setSearchText(event.target.value);
+    console.log(event.target.value)
+    setSearchText(event.target.value.toLowerCase());
     const filteredList = fullIngredientList.filter((el) => {
-      return el.strIngredient1.includes(searchText);
+      console.log(el.strIngredient1.toLowerCase().includes(searchText))
+      if (el.strIngredient1.toLowerCase().includes(searchText)) return el;
+      //return el.strIngredient1.toLowerCase().includes(searchText);
     })
-    setFullIngredientList(filteredList);
+    setFilteredIngredientList(filteredList);
   }
 
   useEffect(() => {
+    getInventory();
     getFullIngredientList();
   }, []);
 
@@ -31,8 +42,8 @@ function IngredientSearch() {
     <p>Search and Add ingredients to your list!</p>
     <input type="text" onChange={handleChange}></input>
     <div>
-    {fullIngredientList.length < 10 ? (
-        fullIngredientList.map((ingredient) => {
+    {(/*filteredIngredientList.length < 100 &&*/ filteredIngredientList.length > 0) ? (
+        filteredIngredientList.map((ingredient) => {
             return (
                 <Ingredient key={ingredient.strIngredient1} ingredient={ingredient} inventory={inventory} setInventory={setInventory}></Ingredient>
             )

@@ -13,11 +13,31 @@ function IngredientSearch() {
   const [inventory, setInventory] = useState([]);
   const [filteredIngredientList, setFilteredIngredientList] = useState([]);
 
+  useEffect(() => {
+    if (!inventory.length) {
+      getInventory();
+    }
+    if (!fullIngredientList.length) {
+      getFullIngredientList();
+    }
+    filterList();
+  }, [searchText]);
 
-  function getFullIngredientList() {
+  async function getFullIngredientList() {
+    const url = "http://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
     console.log("getfullingredientlist triggered")
+    try {
+      const response = await fetch(url);
+      const fetchResponse = await response.json();
+      if(fetchResponse.length) {
+      setFullIngredientList(fetchResponse);
+      }
+    } catch (error) {
+      console.log(error);      
+    }
     setFullIngredientList(mockIngredientList)
   }
+  
   async function getInventory() {
     const url = "http://localhost:3000/inventory";
     console.log("get inventory triggered")
@@ -42,15 +62,6 @@ function IngredientSearch() {
     setFilteredIngredientList(filteredList);
   }
 
-  useEffect(() => {
-    if (!inventory.length) {
-      getInventory();
-    }
-    if (!fullIngredientList.length) {
-      getFullIngredientList();
-    }
-    filterList();
-  }, [searchText]);
 
   return (
     <>

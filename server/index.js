@@ -1,4 +1,3 @@
-//TODO: basic server structure
 "use strict";
 
 const express = require("express");

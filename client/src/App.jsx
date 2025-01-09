@@ -3,12 +3,21 @@ import './App.css'
 import Profile from './components/profile/profile'
 import Navbar from './components/nav-bar/nav-bar'
 import { mockInventory } from './mockdata';
-//TODO: determine components and create basic client structure
+
 function App() {
   const [inventory, setInventory] = useState([]);
 
-  function getInventory() {
-    setInventory(mockInventory);
+  async function getInventory() {
+    const url = "http://localhost:3000/inventory";
+    try {
+      const response = await fetch(url);
+      const fetchInventory = await response.json();
+      if (fetchInventory.length) {
+        setInventory(fetchInventory);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -19,7 +28,7 @@ function App() {
     <>
       <Navbar></Navbar>
       <p>App jsx!</p>
-      <Profile inventory={inventory} setInventory={setInventory}></Profile>
+      <Profile inventory={inventory} setInventory={setInventory} getInventory={getInventory}></Profile>
     </>
   )
 }

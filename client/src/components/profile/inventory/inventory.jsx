@@ -1,10 +1,9 @@
-//TODO: inventory component with list of ingredients
-//TODO: button functionality
+
 
 import { Link } from "react-router"
 import Ingredient from "./ingredient"
 
-function Inventory({ inventory, setInventory }) {
+function Inventory({ inventory, setInventory, getInventory }) {
 
 
 
@@ -14,7 +13,7 @@ function Inventory({ inventory, setInventory }) {
       {inventory.length ? (
         inventory.map((ingredient) => {
             return (
-                <Ingredient key={ingredient.strIngredient1} ingredient={ingredient} inventory={inventory} setInventory={setInventory}></Ingredient>
+                <Ingredient key={ingredient.strIngredient1} ingredient={ingredient} inventory={inventory} setInventory={setInventory} getInventory={getInventory}></Ingredient>
             )
         })
       ) : (

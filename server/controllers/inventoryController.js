@@ -1,6 +1,3 @@
-//TODO: get all inventory ingredients
-//TODO: post one ingredient to db
-
 "use strict";
 const db = require("../models/index.js");
 
@@ -17,10 +14,26 @@ exports.getInventory = async (req, res) => {
 
 exports.addIngredient = async (req, res) => {
   try {
-    const ingredient = req.body.ingredient;
-    await db.inventory.create({ ingredient: ingredient });
+    const ingredient = req.body.strIngredient1;
+    await db.inventory.create({ strIngredient1: ingredient });
     res.status(201);
     res.send("added to inventory");
+  } catch (error) {
+    console.log(error);
+    res.status(500);
+  }
+};
+
+exports.removeIngredient = async (req, res) => {
+  try {
+    const ingredient = req.body.strIngredient1;
+    await db.inventory.destroy({
+      where: {
+        strIngredient1: ingredient,
+      },
+    });
+    res.status(201);
+    res.send("removed from db");
   } catch (error) {
     console.log(error);
     res.status(500);

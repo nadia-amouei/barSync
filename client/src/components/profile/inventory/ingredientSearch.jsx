@@ -3,7 +3,8 @@ import { mockIngredientList, mockInventory } from "../../../mockdata"
 import Navbar from "../../nav-bar/nav-bar";
 import Ingredient from "./ingredient"
 
-//TODO: sort routes out and test this
+//TODO: we have re-used get inventory to pass down to ingredient. this can be simplified.
+//TODO: get full ingredient list from API
 
 
 function IngredientSearch() {
@@ -16,8 +17,17 @@ function IngredientSearch() {
   function getFullIngredientList() {
     setFullIngredientList(mockIngredientList)
   }
-  function getInventory() {
-    setInventory(mockInventory);
+  async function getInventory() {
+    const url = "http://localhost:3000/inventory";
+    try {
+      const response = await fetch(url);
+      const fetchInventory = await response.json();
+      if (fetchInventory.length) {
+        setInventory(fetchInventory);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function handleChange(event) {
@@ -45,7 +55,7 @@ function IngredientSearch() {
     {(filteredIngredientList.length < 20 && filteredIngredientList.length > 0) ? (
         filteredIngredientList.map((ingredient) => {
             return (
-                <Ingredient key={ingredient.strIngredient1} ingredient={ingredient} inventory={inventory} setInventory={setInventory}></Ingredient>
+                <Ingredient key={ingredient.strIngredient1} ingredient={ingredient} inventory={inventory} setInventory={setInventory} getInventory={getInventory}></Ingredient>
             )
         })
       ) : (

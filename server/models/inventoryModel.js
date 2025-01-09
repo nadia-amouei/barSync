@@ -2,7 +2,11 @@
 
 module.exports = (sequelize, DataTypes) => {
   const inventory = sequelize.define("inventory", {
-    ingredient: DataTypes.TEXT,
+    strIngredient1: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      unique: true,
+    },
   });
   return inventory;
 };

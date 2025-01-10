@@ -16,7 +16,10 @@ function RecipeList() {
     }
     if (recipeFilters.length) {
       getRecipes();
+    } else {
+      setRecipeList([]);
     }
+
   }, [recipeFilters]);
 
   async function getInventory() {
@@ -37,7 +40,7 @@ function RecipeList() {
   //TODO: need some way of dealing with 'none found'
   async function getRecipes() {
     const url =
-      "http://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=";
+      "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=";
     const filter = recipeFilters.join();
     console.log(url + filter);
     try {
@@ -61,6 +64,7 @@ function RecipeList() {
     const updatedFilter = recipeFilters.slice();
     updatedFilter.push(ingredient.split(" ").join("_"));
     setRecipeFilters(updatedFilter);
+    // getRecipes();
   }
 
   function removeIngredient(event) {
@@ -69,6 +73,7 @@ function RecipeList() {
     const updatedFilter = recipeFilters.slice();
     updatedFilter.splice(idxOfIngredient, 1);
     setRecipeFilters(updatedFilter);
+    // getRecipes();
   }
   //TODO: test button toggles below and functionality for add remove to filter
   return (
@@ -84,13 +89,13 @@ function RecipeList() {
                 <button
                   value={ingredient.strIngredient1}
                   onClick={
-                    recipeFilters.includes(ingredient.strIngredient1)
+                    recipeFilters.includes(ingredient.strIngredient1.split(" ").join("_"))
                       ? removeIngredient
                       : addIngredient
                   }
                 >
-                  {recipeFilters.includes(ingredient.strIngredient1)
-                    ? "remove"
+                  {recipeFilters.includes(ingredient.strIngredient1.split(" ").join("_"))
+                    ? "Remove"
                     : "Add"}
                 </button>
               </div>

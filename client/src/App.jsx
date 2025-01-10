@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Profile from "./components/profile/profile";
 import Navbar from "./components/nav-bar/nav-bar";
-import { mockInventory } from "./mockdata";
 
 function App() {
   const [inventory, setInventory] = useState([]);

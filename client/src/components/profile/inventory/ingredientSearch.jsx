@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { mockIngredientList, mockInventory } from "../../../mockdata";
 import Navbar from "../../nav-bar/nav-bar";
 import Ingredient from "./ingredient";
 
@@ -24,7 +23,7 @@ function IngredientSearch() {
 
   async function getFullIngredientList() {
     const url =
-      "http://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
+      "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
     console.log("getfullingredientlist triggered");
     try {
       const response = await fetch(url);

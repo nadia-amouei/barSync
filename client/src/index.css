@@ -7,7 +7,6 @@
   --secondary-button: #d17a22;
   --primary-accent: #008080;
   --secondary-accent: #f8c43a;
-
 }
 
 * {
@@ -22,7 +21,6 @@ body {
 }
 
 .navbar {
-
   width: 100vw;
   height: 5vh;
   display: flex;
@@ -42,7 +40,6 @@ body {
 }
 
 .nav-buttons {
-
   width: 50vw;
   display: flex;
   justify-content: space-around;

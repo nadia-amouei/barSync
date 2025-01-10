@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import RecipeDetail from "./recipe-detail";
 import Navbar from "../../nav-bar/nav-bar";
+import { Link } from "react-router";
 
 function RecipeList() {
   const [inventory, setInventory] = useState([]);
@@ -19,7 +20,6 @@ function RecipeList() {
     } else {
       setRecipeList([]);
     }
-
   }, [recipeFilters]);
 
   async function getInventory() {
@@ -89,12 +89,16 @@ function RecipeList() {
                 <button
                   value={ingredient.strIngredient1}
                   onClick={
-                    recipeFilters.includes(ingredient.strIngredient1.split(" ").join("_"))
+                    recipeFilters.includes(
+                      ingredient.strIngredient1.split(" ").join("_")
+                    )
                       ? removeIngredient
                       : addIngredient
                   }
                 >
-                  {recipeFilters.includes(ingredient.strIngredient1.split(" ").join("_"))
+                  {recipeFilters.includes(
+                    ingredient.strIngredient1.split(" ").join("_")
+                  )
                     ? "Remove"
                     : "Add"}
                 </button>
@@ -110,7 +114,9 @@ function RecipeList() {
           recipeList.map((recipe) => {
             return (
               <div key={recipe.idDrink}>
-                <img src={recipe.strDrinkThumb}></img>
+                <Link to={"/recipe/" + recipe.idDrink}>
+                  <img src={recipe.strDrinkThumb}></img>
+                </Link>
                 {recipe.strDrink}
               </div>
             );
@@ -119,7 +125,6 @@ function RecipeList() {
           <p>Select some ingredients to get some recipes!</p>
         )}
       </div>
-      <RecipeDetail></RecipeDetail>
     </>
   );
 }

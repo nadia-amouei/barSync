@@ -4,6 +4,8 @@ function Ingredient({ ingredient, inventory, setInventory, getInventory }) {
   const [added, setAdded] = useState(false);
 
   const plainTextInventory = inventory.map((el) => el.strIngredient1);
+  const ingredientImageUrl =
+    "https://www.thecocktaildb.com/images/ingredients/";
 
   useEffect(() => {
     if (
@@ -56,10 +58,12 @@ function Ingredient({ ingredient, inventory, setInventory, getInventory }) {
 
   return (
     <>
-      <div>{ingredient.strIngredient1}</div>
-      <button onClick={added ? removeIngredient : addIngredient}>
-        {added ? "X" : "+"}
-      </button>
+      <div className="ingredient-container">
+        <p>{ingredient.strIngredient1}</p>
+        <button className="ingredient-button" onClick={added ? removeIngredient : addIngredient}>
+          {added ? "X" : "+"}
+        </button>
+      </div>
     </>
   );
 }

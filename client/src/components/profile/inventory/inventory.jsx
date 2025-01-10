@@ -5,7 +5,7 @@ import Ingredient from "./ingredient";
 function Inventory({ inventory, setInventory, getInventory }) {
   return (
     <>
-      <p>Inventory</p>
+      <h2>Inventory</h2>
       {inventory.length ? (
         inventory.map((ingredient) => {
           return (
@@ -19,7 +19,7 @@ function Inventory({ inventory, setInventory, getInventory }) {
           );
         })
       ) : (
-        <p>No ingredients!</p>
+        <p>No ingredients! Select Add Ingredient above to begin!</p>
       )}
     </>
   );

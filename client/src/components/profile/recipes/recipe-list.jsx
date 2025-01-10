@@ -1,5 +1,6 @@
 //TODO: recipe component to display recipes to make
 //TODO: going to change this and make it filtering through the inventory
+//TODO: sort styling of recipe tiles
 
 import { useEffect, useState } from "react";
 import RecipeDetail from "./recipe-detail";

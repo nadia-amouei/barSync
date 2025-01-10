@@ -70,18 +70,19 @@ body {
 
 .welcome-text {
   padding: 1vh 1vw 1vh 1vw;
-  width: 25%;
+  width: 25vw;
   background-color: var(--secondary-background);
-  height: 25%;
+  height: fit-content;
+  min-height: 25vw;
   border-radius: 8px;
 }
 
 .inventory-container {
   padding: 1vh 1vw 1vh 1vw;
-  width: 25%;
+  width: 25vw;
   background-color: var(--secondary-background);
   height: fit-content;
-  min-height: 25%;
+  min-height: 25vw;
   border-radius: 8px;
 }
 
@@ -152,9 +153,9 @@ body {
 }
 
 .recipe-list-container {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   width: 96vw;
-  height: 91vh;
+  min-height: 91vh;
   margin: 2vh 2vw 2vh 2vw;
   padding: 2vh 2vw 2vh 2vw;
   display: flex;
@@ -164,27 +165,33 @@ body {
 
 .recipe-tile-container {
   border-radius: 8px;
-  padding: 1vh 1vw 1vh 1vw;
-  width: 70%;
+  /* padding: 1vh 1vw 1vh 1vw; */
+  padding-right: 1vw;
+  width: 61vw;
   background-color: var(--secondary-background);
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: center; */
+  /* align-items: start; */
 
 }
 
 .recipe-tile {
-  border: 2px solid green;
-  margin: 1vh 1vw 1vh 1vw;
+  /* border: 2px solid green; */
+  margin: 1vh 0 0 1vw;
   position: relative;
+  height: 20vh;
 }
 
 .recipe-tile-img {
+
   height: 20vh;
-  padding: 1vh 1vw 1vh 1vw;
+  /* padding: 1vh 1vw 1vh 1vw; */
   border-radius: 8px;
 }
 
 .recipe-tile-text {
+  
   position: absolute;
   top: 2vh;
   text-align: center;

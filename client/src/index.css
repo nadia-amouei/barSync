@@ -167,13 +167,30 @@ body {
   padding: 1vh 1vw 1vh 1vw;
   width: 70%;
   background-color: var(--secondary-background);
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .recipe-tile {
-  width: 25%;
-  height: 25%;
+  border: 2px solid green;
+  margin: 1vh 1vw 1vh 1vw;
+  position: relative;
 }
 
 .recipe-tile-img {
-  height: 100px;
+  height: 20vh;
+  padding: 1vh 1vw 1vh 1vw;
+  border-radius: 8px;
+}
+
+.recipe-tile-text {
+  position: absolute;
+  top: 2vh;
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--secondary-background);
+  color: var(--primary-text);
+  width: 16vh;
+  margin: 0 2vh 0 2vh;
 }

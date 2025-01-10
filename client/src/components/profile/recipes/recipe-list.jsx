@@ -79,51 +79,62 @@ function RecipeList() {
   return (
     <>
       <Navbar></Navbar>
-      <p>select the ingredients you would like to use!</p>
-      <div>
-        {inventory.length ? (
-          inventory.map((ingredient) => {
-            return (
-              <div key={ingredient.strIngredient1}>
-                {ingredient.strIngredient1}
-                <button
-                  value={ingredient.strIngredient1}
-                  onClick={
-                    recipeFilters.includes(
+      <div className="recipe-list-container">
+        <div className="inventory-container">
+          <p>Select the ingredients you would like to use!</p>
+          {inventory.length ? (
+            inventory.map((ingredient) => {
+              return (
+                <div
+                  className="ingredient-container"
+                  key={ingredient.strIngredient1}
+                >
+                  {ingredient.strIngredient1}
+                  <button
+                    className="ingredient-button"
+                    value={ingredient.strIngredient1}
+                    onClick={
+                      recipeFilters.includes(
+                        ingredient.strIngredient1.split(" ").join("_")
+                      )
+                        ? removeIngredient
+                        : addIngredient
+                    }
+                  >
+                    {recipeFilters.includes(
                       ingredient.strIngredient1.split(" ").join("_")
                     )
-                      ? removeIngredient
-                      : addIngredient
-                  }
-                >
-                  {recipeFilters.includes(
-                    ingredient.strIngredient1.split(" ").join("_")
-                  )
-                    ? "Remove"
-                    : "Add"}
-                </button>
-              </div>
-            );
-          })
-        ) : (
-          <p>You have no ingredients in your inventory!</p>
-        )}
-      </div>
-      <div>
-        {recipeList.length ? (
-          recipeList.map((recipe) => {
-            return (
-              <div key={recipe.idDrink}>
-                <Link to={"/recipe/" + recipe.idDrink}>
-                  <img src={recipe.strDrinkThumb}></img>
-                </Link>
-                {recipe.strDrink}
-              </div>
-            );
-          })
-        ) : (
-          <p>Select some ingredients to get some recipes!</p>
-        )}
+                      ? "X"
+                      : "+"}
+                  </button>
+                </div>
+              );
+            })
+          ) : (
+            <p>You have no ingredients in your inventory!</p>
+          )}
+        </div>
+        <div className="recipe-tile-container">
+          {recipeList.length ? (
+            recipeList.map((recipe) => {
+              return (
+                <div className="recipe-tile" key={recipe.idDrink}>
+                  <Link to={"/recipe/" + recipe.idDrink}>
+                    <img
+                      className="recipe-tile-img"
+                      src={recipe.strDrinkThumb}
+                    ></img>
+                  </Link>
+                  <p className="recipe-tile-text">{recipe.strDrink}</p>
+                </div>
+              );
+            })
+          ) : (
+            <p className="subtitle">
+              No recipes to display! Try selecting some ingredients to the left.
+            </p>
+          )}
+        </div>
       </div>
     </>
   );

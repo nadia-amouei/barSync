@@ -26,7 +26,6 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <p>App jsx!</p>
       <Profile
         inventory={inventory}
         setInventory={setInventory}

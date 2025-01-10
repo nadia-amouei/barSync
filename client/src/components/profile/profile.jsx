@@ -6,13 +6,27 @@ import RecipeList from "./recipes/recipe-list";
 function Profile({ inventory, setInventory, getInventory }) {
   return (
     <>
-      <p>Profile</p>
-      <Inventory
-        inventory={inventory}
-        setInventory={setInventory}
-        getInventory={getInventory}
-      ></Inventory>
-
+      <div className="profile-container">
+        <div className="welcome-text">
+          <h2>Welcome to barSync!</h2>
+          <p>
+            To the right you will see your ingredient inventory where you can
+            store ingredients you already own.
+          </p>
+          <p>
+            If you wish to add a new ingredient select the button in the bar
+            above.
+          </p>
+          <p>Want to make something? Select the button in the bar above.</p>
+        </div>
+        <div className="inventory-container">
+          <Inventory
+            inventory={inventory}
+            setInventory={setInventory}
+            getInventory={getInventory}
+          ></Inventory>
+        </div>
+      </div>
     </>
   );
 }

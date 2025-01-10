@@ -58,3 +58,28 @@ body {
   justify-content: center;
   font-size: 0.875em;
 }
+
+.profile-container {
+  width: 96vw;
+  height: 91vh;
+  margin: 2vh 2vw 2vh 2vw;
+  padding: 2vh 2vw 2vh 2vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.welcome-text {
+  padding: 1vh 1vw 1vh 1vw;
+  width: 25%;
+  background-color: var(--secondary-background);
+  height: 25%;
+  border-radius: 8px;
+}
+
+.inventory-container {
+  padding: 1vh 1vw 1vh 1vw;
+  width: 25%;
+  background-color: var(--secondary-background);
+  height: 25%;
+  border-radius: 8px;
+}

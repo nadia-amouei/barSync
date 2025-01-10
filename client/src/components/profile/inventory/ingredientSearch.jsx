@@ -64,25 +64,39 @@ function IngredientSearch() {
   return (
     <>
       <Navbar></Navbar>
-      <p>Search and Add ingredients to your list!</p>
-      <input type="text" onChange={handleChange}></input>
-      <div>
-        {filteredIngredientList.length < 20 &&
-        filteredIngredientList.length > 0 ? (
-          filteredIngredientList.map((ingredient) => {
-            return (
-              <Ingredient
-                key={ingredient.strIngredient1}
-                ingredient={ingredient}
-                inventory={inventory}
-                setInventory={setInventory}
-                getInventory={getInventory}
-              ></Ingredient>
-            );
-          })
-        ) : (
-          <p>Start typing to filter ingredients!</p>
-        )}
+      <div className="search-container">
+        <div className="search-bar">
+          <h2 className="subtitle">Welcome to the ingredient search!</h2>
+          <p>
+            Start typing below to filter for ingredients to add to your
+            inventory.
+          </p>
+          <input
+            className="search-field"
+            type="text"
+            onChange={handleChange}
+          ></input>
+        </div>
+        <div className="search-results-container">
+          {filteredIngredientList.length < 20 &&
+          filteredIngredientList.length > 0 ? (
+            filteredIngredientList.map((ingredient) => {
+              return (
+                <Ingredient
+                  key={ingredient.strIngredient1}
+                  ingredient={ingredient}
+                  inventory={inventory}
+                  setInventory={setInventory}
+                  getInventory={getInventory}
+                ></Ingredient>
+              );
+            })
+          ) : (
+            <p className="search-results-placeholder">
+              Start typing to filter ingredients!
+            </p>
+          )}
+        </div>
       </div>
     </>
   );

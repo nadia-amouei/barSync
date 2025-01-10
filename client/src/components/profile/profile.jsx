@@ -1,6 +1,4 @@
-import { Link } from "react-router";
 import Inventory from "./inventory/inventory";
-import RecipeList from "./recipes/recipe-list";
 
 //TODO: initial profile view
 function Profile({ inventory, setInventory, getInventory }) {
@@ -8,7 +6,7 @@ function Profile({ inventory, setInventory, getInventory }) {
     <>
       <div className="profile-container">
         <div className="welcome-text">
-          <h2>Welcome to barSync!</h2>
+          <h2 className="subtitle">Welcome to barSync!</h2>
           <p>
             To the right you will see your ingredient inventory where you can
             store ingredients you already own.

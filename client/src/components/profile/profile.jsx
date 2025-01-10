@@ -12,9 +12,7 @@ function Profile({ inventory, setInventory, getInventory }) {
         setInventory={setInventory}
         getInventory={getInventory}
       ></Inventory>
-      <Link to={"/recipes"}>
-        <button>Make something?</button>
-      </Link>
+
     </>
   );
 }

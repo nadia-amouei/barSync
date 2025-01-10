@@ -21,9 +21,6 @@ function Inventory({ inventory, setInventory, getInventory }) {
       ) : (
         <p>No ingredients!</p>
       )}
-      <Link to={"/ingredientsearch"}>
-        <button>Add Ingredient</button>
-      </Link>
     </>
   );
 }

@@ -4,7 +4,6 @@ import Ingredient from "./ingredient";
 
 //TODO: I have re-used get inventory to pass down to ingredient. this can be simplified.
 
-
 function IngredientSearch() {
   const [fullIngredientList, setFullIngredientList] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -22,8 +21,9 @@ function IngredientSearch() {
   }, [searchText]);
 
   async function getFullIngredientList() {
-    const url =
-      "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
+    // const url =
+    //   "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
+    const url = "http://localhost:3000/ingredient_list";
     console.log("getfullingredientlist triggered");
     try {
       const response = await fetch(url);

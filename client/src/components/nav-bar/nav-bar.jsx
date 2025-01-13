@@ -1,5 +1,3 @@
-
-
 import { Link } from "react-router";
 
 function Navbar() {
@@ -11,7 +9,7 @@ function Navbar() {
         </div>
         <div className="nav-buttons">
           <Link to={"/"} className="nav-button">
-            <p>Inventory</p>
+            <p>Home</p>
           </Link>
           <Link to={"/ingredientsearch"} className="nav-button">
             <p>Add Ingredient</p>

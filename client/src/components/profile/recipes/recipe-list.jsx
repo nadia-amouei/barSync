@@ -36,9 +36,10 @@ function RecipeList() {
   }
 
   async function getRecipes() {
-    const url =
-      "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=";
-    const filter = recipeFilters.join();
+    // const url =
+    //   "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=";
+    const url = "http://localhost:3000/filtered_recipes/";
+    const filter = recipeFilters.join("9");
     console.log(url + filter);
     try {
       const response = await fetch(url + filter);

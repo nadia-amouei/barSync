@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Navbar from "../../nav-bar/nav-bar";
@@ -21,9 +19,10 @@ function RecipeDetail() {
   }, []);
 
   async function getDrinkDetails(drinkId) {
-    const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+    // const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+    const url = "http://localhost:3000/recipedetail/" + drinkId;
     try {
-      const response = await fetch(url + drinkId);
+      const response = await fetch(url);
       const fetchResponse = await response.json();
       if (fetchResponse.drinks.length) {
         const cocktailRecipe = fetchResponse.drinks[0];

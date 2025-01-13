@@ -3,12 +3,20 @@ const Sequelize = require("sequelize");
 const inventoryModel = require("./inventoryModel.js");
 
 //TODO: temporary config, will need changing
+//TODO: create a dotenv file
+//TODO: implement back end for storing user details
+//TODO: store api key in database?
 
 const config = {
   host: "localhost",
   dialect: "postgres",
 };
-const sequelize = new Sequelize("barsync", "willi", "Shredd3r", config);
+const sequelize = new Sequelize(
+  process.env.DATABASE_NAME,
+  process.env.DATABASE_USER,
+  process.env.DATABASE_PASS,
+  config
+);
 const db = {};
 db.sequelize = sequelize;
 db.inventory = inventoryModel(sequelize, Sequelize.DataTypes);

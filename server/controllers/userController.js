@@ -37,3 +37,16 @@ exports.login = async (req, res) => {
       .send({ error: "401", message: "Username or password is incorrect" });
   }
 };
+
+exports.logout = async (req, res) => {
+  req.session.destroy((error) => {
+    if (error) {
+      res
+        .status(500)
+        .send({ error, message: "Could not log out, please try again" });
+    } else {
+      res.clearCookie("sid");
+      res.status(200).send({ message: "Logout successful" });
+    }
+  });
+};

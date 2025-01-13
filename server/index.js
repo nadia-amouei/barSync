@@ -5,11 +5,27 @@ const express = require("express");
 const router = require("./router.js");
 const cors = require("cors");
 const db = require("./models/index.js");
+const session = require("express-session");
 const app = express();
 const port = process.env.PORT;
+const SECRET = process.env.SECRET;
 
 app.use(cors());
 app.use(express.json());
+app.use(
+  session({
+    name: "sid",
+    saveUninitialized: false,
+    resave: false,
+    secret: SECRET,
+    cookie: {
+      maxAge: 1000 * 60 * 60, // 1hr
+      sameSite: true,
+      httpOnly: false,
+      secure: false,
+    },
+  })
+);
 app.use(router);
 
 (async () => {

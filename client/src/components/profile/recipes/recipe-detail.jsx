@@ -58,31 +58,51 @@ function RecipeDetail() {
   return (
     <>
       <Navbar></Navbar>
-      {drinkDetail ? (
-        <>
-          <p>RecipeDetail</p>
-          <h1>{drinkDetail.strDrink}</h1>
-          <img src={drinkDetail.strDrinkThumb} />
-          <p>{drinkDetail.strInstructions}</p>
-          {drinkIngredients.length ? (
-            drinkIngredients.map((ingredient) => {
-              return (
-                <Ingredient
-                  key={ingredient.strIngredient1}
-                  ingredient={ingredient}
-                  inventory={inventory}
-                  setInventory={setInventory}
-                  getInventory={getInventory}
-                />
-              );
-            })
+      <div className="recipe-detail-container">
+        {drinkDetail ? (
+          <>
+            <div className="recipe-tile">
+              <img
+                src={drinkDetail.strDrinkThumb}
+                className="recipe-tile-img"
+              />
+              <p className="recipe-tile-text">{drinkDetail.strDrink}</p>
+            </div>
+            <div className="inventory-container margin-top">
+              <h2>Ingredients</h2>
+              {drinkIngredients.length ? (
+                drinkIngredients.map((ingredient) => {
+                  return (
+                    <Ingredient
+                      key={ingredient.strIngredient1}
+                      ingredient={ingredient}
+                      inventory={inventory}
+                      setInventory={setInventory}
+                      getInventory={getInventory}
+                    />
+                  );
+                })
+              ) : (
+                <p>no ingredients?</p>
+              )}
+            </div>
+          </>
+        ) : (
+          <p>None found...</p>
+        )}
+        <div className="inventory-container margin-top margin-right">
+          {drinkDetail ? (
+            <>
+              <h2>Instructions:</h2>
+              <p className="instructions-text margin-top">
+                {drinkDetail.strInstructions}
+              </p>
+            </>
           ) : (
-            <p>no ingredients?</p>
+            <p>No instructions found!</p>
           )}
-        </>
-      ) : (
-        <p>None found...</p>
-      )}
+        </div>
+      </div>
     </>
   );
 }

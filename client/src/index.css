@@ -171,8 +171,9 @@ body {
   background-color: var(--secondary-background);
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  /* align-items: start; */
+  /* flex-direction: row; */
+  justify-content: flex-start;
+  /* align-items: baseline; */
 }
 
 .recipe-tile {
@@ -180,12 +181,14 @@ body {
   margin: 1vh 0 0 1vw;
   position: relative;
   height: 20vh;
+  /* border: 1px solid pink; */
 }
 
 .recipe-tile-img {
   height: 20vh;
   /* padding: 1vh 1vw 1vh 1vw; */
   border-radius: 8px;
+  /* border: 1px solid green; */
 }
 
 .recipe-tile-text {
@@ -197,4 +200,18 @@ body {
   color: var(--primary-text);
   width: 16vh;
   margin: 0 2vh 0 2vh;
+  /* border: 1px solid red; */
+}
+
+.recipe-detail-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.margin-top {
+  margin-top: 1vh;
+}
+
+.margin-right {
+  margin-right: 1vw;
 }

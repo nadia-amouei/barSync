@@ -20,5 +20,4 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 
-//TODO: add routes to pages
-//TODO: add route params to go to recipe detail
+

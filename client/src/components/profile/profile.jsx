@@ -1,6 +1,6 @@
 import Inventory from "./inventory/inventory";
 
-//TODO: initial profile view
+
 function Profile({ inventory, setInventory, getInventory }) {
   return (
     <>

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import Navbar from "../../nav-bar/nav-bar";
 import Ingredient from "./ingredient";
 
-//TODO: we have re-used get inventory to pass down to ingredient. this can be simplified.
-//TODO: get full ingredient list from API
+//TODO: I have re-used get inventory to pass down to ingredient. this can be simplified.
+
 
 function IngredientSearch() {
   const [fullIngredientList, setFullIngredientList] = useState([]);

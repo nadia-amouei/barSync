@@ -1,7 +1,3 @@
-//TODO: recipe component to display recipes to make
-//TODO: going to change this and make it filtering through the inventory
-//TODO: sort styling of recipe tiles
-
 import { useEffect, useState } from "react";
 import RecipeDetail from "./recipe-detail";
 import Navbar from "../../nav-bar/nav-bar";
@@ -38,7 +34,7 @@ function RecipeList() {
       console.log(error);
     }
   }
-  //TODO: need some way of dealing with 'none found'
+
   async function getRecipes() {
     const url =
       "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=";
@@ -76,7 +72,7 @@ function RecipeList() {
     setRecipeFilters(updatedFilter);
     // getRecipes();
   }
-  //TODO: test button toggles below and functionality for add remove to filter
+
   return (
     <>
       <Navbar></Navbar>

@@ -36,4 +36,4 @@ function App() {
 }
 
 export default App;
-//TODO clear out completed todos
+

@@ -1,4 +1,4 @@
-//TODO: nav bar component
+
 
 import { Link } from "react-router";
 

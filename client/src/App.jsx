@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import Profile from "./components/profile/profile";
 import Navbar from "./components/nav-bar/nav-bar";
@@ -19,6 +19,8 @@ function App() {
     }
   }
 
+
+
   useEffect(() => {
     getInventory();
   }, []);
@@ -36,4 +38,3 @@ function App() {
 }
 
 export default App;
-

@@ -2,8 +2,6 @@
 const Sequelize = require("sequelize");
 const inventoryModel = require("./inventoryModel.js");
 
-//TODO: temporary config, will need changing
-//TODO: create a dotenv file
 //TODO: implement back end for storing user details
 //TODO: store api key in database?
 

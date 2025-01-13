@@ -7,7 +7,7 @@ function Navbar() {
         <div className="hero">
           <h1 className="title">barSync</h1>
         </div>
-        <div className="nav-buttons">
+        <nav className="nav-buttons">
           <Link to={"/"} className="nav-button">
             <p>Home</p>
           </Link>
@@ -17,7 +17,7 @@ function Navbar() {
           <Link to={"/recipes"} className="nav-button">
             <p>Make something?</p>
           </Link>
-        </div>
+        </nav>
       </div>
     </>
   );

@@ -11,4 +11,3 @@ router.get("/recipedetail/:drinkId", apiController.getRecipeDetails);
 router.get("/filtered_recipes/:filter", apiController.getFilteredRecipes);
 
 module.exports = router;
-//TODO route api through back-end

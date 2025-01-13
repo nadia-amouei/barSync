@@ -32,6 +32,7 @@ function Ingredient({ ingredient, inventory, setInventory, getInventory }) {
         },
       });
       getInventory();
+      // setInventory(apiService.getInventory());
     } catch (error) {
       console.log(error);
     }

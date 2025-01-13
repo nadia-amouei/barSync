@@ -173,7 +173,6 @@ body {
   flex-wrap: wrap;
   /* justify-content: center; */
   /* align-items: start; */
-
 }
 
 .recipe-tile {
@@ -184,14 +183,12 @@ body {
 }
 
 .recipe-tile-img {
-
   height: 20vh;
   /* padding: 1vh 1vw 1vh 1vw; */
   border-radius: 8px;
 }
 
 .recipe-tile-text {
-  
   position: absolute;
   top: 2vh;
   text-align: center;

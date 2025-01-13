@@ -60,7 +60,10 @@ function Ingredient({ ingredient, inventory, setInventory, getInventory }) {
     <>
       <div className="ingredient-container">
         <p>{ingredient.strIngredient1}</p>
-        <button className="ingredient-button" onClick={added ? removeIngredient : addIngredient}>
+        <button
+          className="ingredient-button"
+          onClick={added ? removeIngredient : addIngredient}
+        >
           {added ? "X" : "+"}
         </button>
       </div>

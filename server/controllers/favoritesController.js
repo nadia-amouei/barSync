@@ -1,5 +1,5 @@
 "use strict";
-const db = require("../models/favoritesModel.js");
+const db = require("../models/index.js");
 
 exports.getFavorites = async (req, res) => {
   try {
@@ -14,8 +14,14 @@ exports.getFavorites = async (req, res) => {
 
 exports.addFavorite = async (req, res) => {
   try {
-    const favorite = req.body.idDrink;
-    await db.favoritesModel.create({ idDrink: favorite });
+    const favoriteId = req.body.idDrink;
+    const favoriteThumb = req.body.strDrinkThumb;
+    const favoriteTitle = req.body.strDrink;
+    await db.favoritesModel.create({
+      idDrink: favoriteId,
+      strDrinkThumb: favoriteThumb,
+      strDrink: favoriteTitle,
+    });
     res.status(201);
     res.send("added to favorites");
   } catch (error) {

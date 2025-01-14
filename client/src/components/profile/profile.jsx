@@ -1,7 +1,8 @@
 import Inventory from "./inventory/inventory";
+import { Link } from "react-router";
 
-
-function Profile({ inventory, setInventory, getInventory }) {
+        //TODO change styling here
+function Profile({ inventory, setInventory, getInventory, favorites, getFavorites, setFavorites }) {
   return (
     <>
       <div className="profile-container">
@@ -23,6 +24,26 @@ function Profile({ inventory, setInventory, getInventory }) {
             setInventory={setInventory}
             getInventory={getInventory}
           ></Inventory>
+        </div>
+        <div className="recipe-tile-container">
+          <h2 className="subtitle">Favorites:</h2>
+          {favorites.length ? (favorites.map((favorite) => {
+            return (
+              <div className="recipe-tile" key={favorite.idDrink}>
+                  <Link to={"/recipe/" + favorite.idDrink}>
+                    <img
+                      className="recipe-tile-img"
+                      src={favorite.strDrinkThumb}
+                    ></img>
+                  </Link>
+                  <p className="recipe-tile-text">{favorite.strDrink}</p>
+                </div>
+            )
+          })) : (
+            <p className="recipe-tile-default-text subtitle">
+            No favorites to display! Take a look at some recipes to add some!
+          </p>
+          )}
         </div>
       </div>
     </>

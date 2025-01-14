@@ -5,6 +5,7 @@ import Navbar from "./components/nav-bar/nav-bar";
 
 function App() {
   const [inventory, setInventory] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   async function getInventory() {
     const url = "http://localhost:3000/inventory";
@@ -19,10 +20,25 @@ function App() {
     }
   }
 
+  async function getFavorites() {
+    const url = "http://localhost:3000/favorites";
+    try {
+      const response = await fetch(url);
+      const fetchFavorites = await response.json();
+      if (fetchFavorites.length) {
+        console.log("favorites:", fetchFavorites);
+        setFavorites(fetchFavorites);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 
 
   useEffect(() => {
     getInventory();
+    getFavorites();
   }, []);
 
   return (
@@ -32,6 +48,9 @@ function App() {
         inventory={inventory}
         setInventory={setInventory}
         getInventory={getInventory}
+        favorites={favorites}
+        setFavorites={setFavorites}
+        getFavorites={getFavorites}
       ></Profile>
     </>
   );

@@ -8,6 +8,14 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       primaryKey: true,
     },
+    strDrinkThumb: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    strDrink: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
   return favorites;
 };

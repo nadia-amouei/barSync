@@ -7,6 +7,9 @@ function RecipeDetail() {
   const [drinkDetail, setDrinkDetail] = useState(null);
   const [drinkIngredients, setDrinkIngredients] = useState([]);
   const [inventory, setInventory] = useState([]);
+  const [favorited, setFavorited] = useState(false)
+  const [favorites, setFavorites] = useState([])
+  const [favoriteIds, setFavoriteIds] = useState([])
 
   let params = useParams();
   const drinkId = params.recipeId;
@@ -15,7 +18,19 @@ function RecipeDetail() {
     if (!inventory.length) {
       getInventory();
     }
+    getFavorites();
     getDrinkDetails(drinkId);
+    if (favorites.length) {
+      const arrOfIds = favorites.map((el) => el.idDrink)
+      setFavoriteIds(arrOfIds);
+      console.log(arrOfIds);
+    }
+    console.log(favoriteIds.includes(Number(drinkId)));
+    if (favorites.length && favoriteIds.includes(Number(drinkId))) {
+      setFavorited(true);
+    } else {
+      setFavorited(false);
+    }
   }, []);
 
   async function getDrinkDetails(drinkId) {
@@ -49,6 +64,53 @@ function RecipeDetail() {
       if (fetchInventory.length) {
         setInventory(fetchInventory);
       }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getFavorites() {
+    const url = "http://localhost:3000/favorites";
+    try {
+      const response = await fetch(url);
+      const fetchFavorites = await response.json();
+      if (fetchFavorites.length) {
+        console.log("favorites:", fetchFavorites);
+        setFavorites(fetchFavorites);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function addFavorite() {
+    const title = drinkDetail.strDrink;
+    const thumb = drinkDetail.strDrinkThumb;
+    try {
+      await fetch("http://localhost:3000/favorites", {
+        method: "POST",
+        body: JSON.stringify({idDrink: drinkId, strDrinkThumb: thumb, strDrink: title}),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      setFavorited(true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function removeFavorite() {
+
+    try {
+      await fetch("http://localhost:3000/favorites", {
+        method: "DELETE",
+        body: JSON.stringify({ idDrink: drinkId }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      setFavorited(false);
     } catch (error) {
       console.log(error);
     }
@@ -96,6 +158,10 @@ function RecipeDetail() {
               <p className="instructions-text margin-top">
                 {drinkDetail.strInstructions}
               </p>
+              <div className="ingredient-container">
+                <p>{favorited ? "Remove from favorites?" : "Add to favorites?"}</p>
+                <button className="ingredient-button" onClick={favorited ? removeFavorite : addFavorite}>{favorited ? "</3" : "<3"}</button>
+              </div>
             </>
           ) : (
             <p>No instructions found!</p>

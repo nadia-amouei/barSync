@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import RecipeDetail from "./recipe-detail";
 import Navbar from "../../nav-bar/nav-bar";
 import { Link } from "react-router";
 
@@ -21,13 +20,10 @@ function RecipeList() {
 
   async function getInventory() {
     const url = "http://localhost:3000/inventory";
-    console.log("get inventory triggered");
     try {
-      console.log("1");
       const response = await fetch(url);
       const fetchInventory = await response.json();
       if (fetchInventory.length) {
-        console.log("2");
         setInventory(fetchInventory);
       }
     } catch (error) {
@@ -36,15 +32,11 @@ function RecipeList() {
   }
 
   async function getRecipes() {
-    // const url =
-    //   "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=";
     const url = "http://localhost:3000/filtered_recipes/";
     const filter = recipeFilters.join("9");
-    console.log(url + filter);
     try {
       const response = await fetch(url + filter);
       const fetchResponse = await response.json();
-      console.log(fetchResponse);
       if (
         fetchResponse.drinks.length &&
         fetchResponse.drinks !== "None Found"
@@ -58,11 +50,9 @@ function RecipeList() {
 
   function addIngredient(event) {
     const ingredient = event.target.value;
-    console.log(ingredient);
     const updatedFilter = recipeFilters.slice();
     updatedFilter.push(ingredient.split(" ").join("_"));
     setRecipeFilters(updatedFilter);
-    // getRecipes();
   }
 
   function removeIngredient(event) {
@@ -71,7 +61,6 @@ function RecipeList() {
     const updatedFilter = recipeFilters.slice();
     updatedFilter.splice(idxOfIngredient, 1);
     setRecipeFilters(updatedFilter);
-    // getRecipes();
   }
 
   return (

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import barSyncLogo from "../../assets/barSync_logo.png"
+import barSyncLogo from "../../assets/barSync_logo.png";
 
 function Navbar() {
   return (

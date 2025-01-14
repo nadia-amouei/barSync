@@ -19,7 +19,7 @@ app.use(
     resave: false,
     secret: SECRET,
     cookie: {
-      maxAge: 1000 * 60 * 60, // 1hr
+      maxAge: 1000 * 60 * 60,
       sameSite: true,
       httpOnly: false,
       secure: false,

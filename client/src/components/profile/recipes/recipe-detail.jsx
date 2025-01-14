@@ -13,8 +13,6 @@ function RecipeDetail() {
 
   let params = useParams();
   const drinkId = params.recipeId;
-  const heart = "&#129505"
-  const brokenHeart = "&#128148"
 
   useEffect(() => {
     if (!inventory.length) {
@@ -25,9 +23,7 @@ function RecipeDetail() {
     if (favorites.length) {
       const arrOfIds = favorites.map((el) => el.idDrink);
       setFavoriteIds(arrOfIds);
-      console.log(arrOfIds);
     }
-    console.log(favoriteIds.includes(Number(drinkId)));
     if (favorites.length && favoriteIds.includes(Number(drinkId))) {
       setFavorited(true);
     } else {
@@ -36,7 +32,6 @@ function RecipeDetail() {
   }, []);
 
   async function getDrinkDetails(drinkId) {
-    // const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
     const url = "http://localhost:3000/recipedetail/" + drinkId;
     try {
       const response = await fetch(url);
@@ -59,7 +54,6 @@ function RecipeDetail() {
 
   async function getInventory() {
     const url = "http://localhost:3000/inventory";
-    console.log("get inventory triggered");
     try {
       const response = await fetch(url);
       const fetchInventory = await response.json();
@@ -77,7 +71,6 @@ function RecipeDetail() {
       const response = await fetch(url);
       const fetchFavorites = await response.json();
       if (fetchFavorites.length) {
-        console.log("favorites:", fetchFavorites);
         setFavorites(fetchFavorites);
       }
     } catch (error) {
@@ -171,7 +164,9 @@ function RecipeDetail() {
                   className="ingredient-button"
                   onClick={favorited ? removeFavorite : addFavorite}
                 >
-                  {favorited ? String.fromCodePoint('0x1F494') : String.fromCodePoint('0x1F9E1')}
+                  {favorited
+                    ? String.fromCodePoint("0x1F494")
+                    : String.fromCodePoint("0x1F9E1")}
                 </button>
               </div>
             </>

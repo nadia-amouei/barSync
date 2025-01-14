@@ -1,5 +1,3 @@
-//TODO: when removing last ingredient from inventory doesn't remove it.
-import { Link } from "react-router";
 import Ingredient from "./ingredient";
 
 function Inventory({ inventory, setInventory, getInventory }) {

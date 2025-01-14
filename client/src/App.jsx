@@ -26,7 +26,6 @@ function App() {
       const response = await fetch(url);
       const fetchFavorites = await response.json();
       if (fetchFavorites.length) {
-        console.log("favorites:", fetchFavorites);
         setFavorites(fetchFavorites);
       }
     } catch (error) {

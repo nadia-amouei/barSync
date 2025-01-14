@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 :root {
   --primary-background: #2e2e2e;
   --secondary-background: #474747;
@@ -9,7 +9,6 @@
   --primary-accent: #008080;
   --secondary-accent: #f8c43a;
 }
-
 
 * {
   margin: 0;
@@ -131,8 +130,6 @@ body {
   padding-bottom: 1vh;
 }
 
-
-
 .ingredient-container {
   display: flex;
   justify-content: space-between;
@@ -230,7 +227,7 @@ body {
   justify-content: flex-start;
   /* align-items: baseline; */
   box-shadow: 5px 5px 10px black;
-  height:fit-content;
+  height: fit-content;
   padding-bottom: 1vh;
 }
 

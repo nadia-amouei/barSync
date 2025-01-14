@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 :root {
   --primary-background: #2e2e2e;
   --secondary-background: #474747;
@@ -9,11 +10,13 @@
   --secondary-accent: #f8c43a;
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: var(--primary-text);
+  font-family: "Lato", serif;
 }
 
 body {
@@ -36,10 +39,13 @@ body {
   /* border: 2px solid red; */
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   width: 30%;
 }
-
+.logo {
+  height: 100%;
+  padding: 0.25vh;
+}
 .nav-buttons {
   width: 50vw;
   display: flex;
@@ -61,7 +67,7 @@ body {
 }
 
 .nav-button:hover {
-  background-color: var(--secondary-button);
+  background-color: var(--primary-accent);
 }
 
 .profile-container {
@@ -70,7 +76,24 @@ body {
   margin: 2vh 2vw 2vh 2vw;
   padding: 2vh 2vw 2vh 2vw;
   display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  /* border: 1px solid pink; */
+}
+
+.profile-section-1 {
+  /* border: 1px solid green; */
+  display: flex;
   justify-content: space-evenly;
+}
+
+.profile-section-2 {
+  /* border: 1px solid red; */
+  background-color: var(--secondary-background);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px black;
+  padding: 1vh 1vw 1vh 1vw;
+  margin-top: 2vh;
 }
 
 .welcome-text {
@@ -94,22 +117,21 @@ body {
 }
 
 .recipe-favorites-container {
-  /* border: 1px solid pink; */
-  padding: 1vh 1vw 2vh 1vw;
-  width: 24vh;
-  background-color: var(--secondary-background);
+  /* border: 1px solid yellow; */
+  /* padding: 1vh 1vw 2vh 1vw; */
+  /* width: 24vh; */
+  /* background-color: var(--secondary-background); */
   height: fit-content;
   min-height: 25vw;
-  border-radius: 8px;
-  box-shadow: 5px 5px 10px black;
+  /* border-radius: 8px; */
+  /* box-shadow: 5px 5px 10px black; */
   display: flex;
   flex-wrap: wrap;
   /* flex-direction: column; */
+  padding-bottom: 1vh;
 }
 
-.favorite-text {
-  width: 20vh;
-}
+
 
 .ingredient-container {
   display: flex;
@@ -133,7 +155,7 @@ body {
 
 .ingredient-button:hover {
   cursor: pointer;
-  background-color: var(--primary-button);
+  background-color: var(--primary-accent);
 }
 
 .subtitle {

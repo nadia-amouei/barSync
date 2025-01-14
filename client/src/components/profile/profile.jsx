@@ -13,6 +13,7 @@ function Profile({
   return (
     <>
       <div className="profile-container">
+        <div className="profile-section-1">
         <div className="welcome-text">
           <h2 className="subtitle">Welcome to barSync!</h2>
           <p>
@@ -32,8 +33,10 @@ function Profile({
             getInventory={getInventory}
           ></Inventory>
         </div>
+        </div>
+        <div className="profile-section-2">
+        <h2 className="subtitle favorite-text">Favorites:</h2>
         <div className="recipe-favorites-container">
-          <h2 className="subtitle favorite-text">Favorites:</h2>
           {favorites.length ? (
             favorites.map((favorite) => {
               return (
@@ -53,6 +56,7 @@ function Profile({
               No favorites to display! Take a look at some recipes to add some!
             </p>
           )}
+        </div>
         </div>
       </div>
     </>

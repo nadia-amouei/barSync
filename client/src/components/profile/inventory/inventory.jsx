@@ -5,7 +5,7 @@ import Ingredient from "./ingredient";
 function Inventory({ inventory, setInventory, getInventory }) {
   return (
     <>
-      <h2 className="subtitle">Inventory</h2>
+      <h2 className="subtitle">Inventory:</h2>
       {inventory.length ? (
         inventory.map((ingredient) => {
           return (

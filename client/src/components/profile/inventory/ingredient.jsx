@@ -65,7 +65,7 @@ function Ingredient({ ingredient, inventory, setInventory, getInventory }) {
           className="ingredient-button"
           onClick={added ? removeIngredient : addIngredient}
         >
-          {added ? "X" : "+"}
+          {added ? String.fromCodePoint('0x1F5D1') : String.fromCodePoint('0x1F378')}
         </button>
       </div>
     </>

@@ -13,6 +13,8 @@ function RecipeDetail() {
 
   let params = useParams();
   const drinkId = params.recipeId;
+  const heart = "&#129505"
+  const brokenHeart = "&#128148"
 
   useEffect(() => {
     if (!inventory.length) {
@@ -169,7 +171,7 @@ function RecipeDetail() {
                   className="ingredient-button"
                   onClick={favorited ? removeFavorite : addFavorite}
                 >
-                  {favorited ? "</3" : "<3"}
+                  {favorited ? String.fromCodePoint('0x1F494') : String.fromCodePoint('0x1F9E1')}
                 </button>
               </div>
             </>

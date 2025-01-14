@@ -93,6 +93,24 @@ body {
   box-shadow: 5px 5px 10px black;
 }
 
+.recipe-favorites-container {
+  /* border: 1px solid pink; */
+  padding: 1vh 1vw 2vh 1vw;
+  width: 24vh;
+  background-color: var(--secondary-background);
+  height: fit-content;
+  min-height: 25vw;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px black;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+
+.favorite-text {
+  width: 20vh;
+}
+
 .ingredient-container {
   display: flex;
   justify-content: space-between;

@@ -1,8 +1,15 @@
 import Inventory from "./inventory/inventory";
 import { Link } from "react-router";
 
-        //TODO change styling here
-function Profile({ inventory, setInventory, getInventory, favorites, getFavorites, setFavorites }) {
+//TODO change styling here
+function Profile({
+  inventory,
+  setInventory,
+  getInventory,
+  favorites,
+  getFavorites,
+  setFavorites,
+}) {
   return (
     <>
       <div className="profile-container">
@@ -25,11 +32,12 @@ function Profile({ inventory, setInventory, getInventory, favorites, getFavorite
             getInventory={getInventory}
           ></Inventory>
         </div>
-        <div className="recipe-tile-container">
-          <h2 className="subtitle">Favorites:</h2>
-          {favorites.length ? (favorites.map((favorite) => {
-            return (
-              <div className="recipe-tile" key={favorite.idDrink}>
+        <div className="recipe-favorites-container">
+          <h2 className="subtitle favorite-text">Favorites:</h2>
+          {favorites.length ? (
+            favorites.map((favorite) => {
+              return (
+                <div className="recipe-tile" key={favorite.idDrink}>
                   <Link to={"/recipe/" + favorite.idDrink}>
                     <img
                       className="recipe-tile-img"
@@ -38,11 +46,12 @@ function Profile({ inventory, setInventory, getInventory, favorites, getFavorite
                   </Link>
                   <p className="recipe-tile-text">{favorite.strDrink}</p>
                 </div>
-            )
-          })) : (
+              );
+            })
+          ) : (
             <p className="recipe-tile-default-text subtitle">
-            No favorites to display! Take a look at some recipes to add some!
-          </p>
+              No favorites to display! Take a look at some recipes to add some!
+            </p>
           )}
         </div>
       </div>

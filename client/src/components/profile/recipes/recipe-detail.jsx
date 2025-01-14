@@ -7,9 +7,9 @@ function RecipeDetail() {
   const [drinkDetail, setDrinkDetail] = useState(null);
   const [drinkIngredients, setDrinkIngredients] = useState([]);
   const [inventory, setInventory] = useState([]);
-  const [favorited, setFavorited] = useState(false)
-  const [favorites, setFavorites] = useState([])
-  const [favoriteIds, setFavoriteIds] = useState([])
+  const [favorited, setFavorited] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+  const [favoriteIds, setFavoriteIds] = useState([]);
 
   let params = useParams();
   const drinkId = params.recipeId;
@@ -21,7 +21,7 @@ function RecipeDetail() {
     getFavorites();
     getDrinkDetails(drinkId);
     if (favorites.length) {
-      const arrOfIds = favorites.map((el) => el.idDrink)
+      const arrOfIds = favorites.map((el) => el.idDrink);
       setFavoriteIds(arrOfIds);
       console.log(arrOfIds);
     }
@@ -89,7 +89,11 @@ function RecipeDetail() {
     try {
       await fetch("http://localhost:3000/favorites", {
         method: "POST",
-        body: JSON.stringify({idDrink: drinkId, strDrinkThumb: thumb, strDrink: title}),
+        body: JSON.stringify({
+          idDrink: drinkId,
+          strDrinkThumb: thumb,
+          strDrink: title,
+        }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -101,7 +105,6 @@ function RecipeDetail() {
   }
 
   async function removeFavorite() {
-
     try {
       await fetch("http://localhost:3000/favorites", {
         method: "DELETE",
@@ -159,8 +162,15 @@ function RecipeDetail() {
                 {drinkDetail.strInstructions}
               </p>
               <div className="ingredient-container">
-                <p>{favorited ? "Remove from favorites?" : "Add to favorites?"}</p>
-                <button className="ingredient-button" onClick={favorited ? removeFavorite : addFavorite}>{favorited ? "</3" : "<3"}</button>
+                <p>
+                  {favorited ? "Remove from favorites?" : "Add to favorites?"}
+                </p>
+                <button
+                  className="ingredient-button"
+                  onClick={favorited ? removeFavorite : addFavorite}
+                >
+                  {favorited ? "</3" : "<3"}
+                </button>
               </div>
             </>
           ) : (

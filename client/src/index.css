@@ -29,6 +29,7 @@ body {
   padding-right: 5vw;
   background-color: var(--secondary-background);
   border-radius: 25px;
+  box-shadow: 5px 5px 10px black;
 }
 
 .hero {
@@ -59,6 +60,10 @@ body {
   font-size: 0.875em;
 }
 
+.nav-button:hover {
+  background-color: var(--secondary-button);
+}
+
 .profile-container {
   width: 96vw;
   height: 91vh;
@@ -75,6 +80,7 @@ body {
   height: fit-content;
   min-height: 25vw;
   border-radius: 8px;
+  box-shadow: 5px 5px 10px black;
 }
 
 .inventory-container {
@@ -84,6 +90,7 @@ body {
   height: fit-content;
   min-height: 25vw;
   border-radius: 8px;
+  box-shadow: 5px 5px 10px black;
 }
 
 .ingredient-container {
@@ -104,6 +111,11 @@ body {
   width: 1.5em;
   border-radius: 3px;
   font-size: 0.75em;
+}
+
+.ingredient-button:hover {
+  cursor: pointer;
+  background-color: var(--primary-button);
 }
 
 .subtitle {
@@ -132,6 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 5px 5px 10px black;
 }
 
 .search-results-container {
@@ -140,6 +153,7 @@ body {
   background-color: var(--secondary-background);
   width: 90%;
   height: 90%;
+  box-shadow: 5px 5px 10px black;
 }
 
 .search-results-placeholder {
@@ -147,9 +161,10 @@ body {
 }
 
 .search-field {
-  color: var(--secondary-text);
+  color: var(--primary-accent);
   border-radius: 5px;
   margin-top: 0.5em;
+  padding-left: 1em;
 }
 
 .recipe-list-container {
@@ -174,6 +189,9 @@ body {
   /* flex-direction: row; */
   justify-content: flex-start;
   /* align-items: baseline; */
+  box-shadow: 5px 5px 10px black;
+  height:fit-content;
+  padding-bottom: 1vh;
 }
 
 .recipe-tile {
@@ -181,7 +199,9 @@ body {
   margin: 1vh 0 0 1vw;
   position: relative;
   height: 20vh;
+  border-radius: 8px;
   /* border: 1px solid pink; */
+  box-shadow: 5px 5px 10px black;
 }
 
 .recipe-tile-img {
@@ -200,6 +220,7 @@ body {
   color: var(--primary-text);
   width: 16vh;
   margin: 0 2vh 0 2vh;
+  box-shadow: 5px 5px 10px black;
   /* border: 1px solid red; */
 }
 
@@ -214,4 +235,10 @@ body {
 
 .margin-right {
   margin-right: 1vw;
+}
+
+.recipe-tile-default-text {
+  /* border: 1px solid pink; */
+  width: 100%;
+  margin-top: 2vh;
 }

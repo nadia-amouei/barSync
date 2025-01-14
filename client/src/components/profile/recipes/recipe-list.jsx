@@ -128,7 +128,7 @@ function RecipeList() {
               );
             })
           ) : (
-            <p className="subtitle">
+            <p className="recipe-tile-default-text subtitle">
               No recipes to display! Try selecting some ingredients to the left.
             </p>
           )}

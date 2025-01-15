@@ -11,7 +11,7 @@
 
 > Hello and welcome to barSync!
 
-### 🏠 Homepage
+### Description
 
 barSync is a web app that helps users manage their cocktail ingredients and discover new drinks. Users can easily track the ingredients they have at home, and use these ingredients to filter for cocktails which they can make with those ingredients.
 

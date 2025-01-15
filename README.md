@@ -11,19 +11,47 @@
 
 > Hello and welcome to barSync!
 
-### 🏠 [Homepage](barSync is a web app that helps users manage their cocktail ingredients and discover new drinks. Users can easily track the ingredients they have at home, and use these ingredients to filter for cocktails which they can make with those ingredients.)
+### 🏠 Homepage
+
+barSync is a web app that helps users manage their cocktail ingredients and discover new drinks. Users can easily track the ingredients they have at home, and use these ingredients to filter for cocktails which they can make with those ingredients.
+
+## tech stack
+
+barSync is built with a react front end styled with vanilla CSS. The back end runs off an express server linked in to a postgres SQL database using sequelize ORM.
 
 ## Install
+
+# Please note:
+
+You will need to create a `.env` file within the server folder.
+This file will need to contain the following details:
+_PORT_ - the port you would like your server to run on
+_DATABASE_NAME_ - the name of your psql database
+_DATABASE_USER_ - db username
+_DATABASE_PASS_ - db password
+This project uses [thecocktaildb](https://www.thecocktaildb.com/) API. It uses a premium API key the instructions of how to obtain one can be found on the link (costs £2 a month).
+_API_URL_ - here is where you put the api url
+_API_KEY_ - api key
+
+1. cd into the client folder and run:
 
 ```sh
 npm install
 ```
 
-## Run tests
+2. cd into the server folder and run:
 
 ```sh
-npm run test
+npm install
 ```
+
+3. You are now ready to go! Run:
+
+```sh
+npm run dev
+```
+
+from both the client and server folders.
 
 ## Author
 

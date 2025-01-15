@@ -66,6 +66,12 @@ from both the client and server folders.
 
 - Github: [@Billhaigh13](https://github.com/Billhaigh13)
 
+## Credit
+
+👤 **Benjamin McCarthy**
+
+- created the excellent logo
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!

@@ -1,4 +1,6 @@
-<img src="/client/src/assets/barSync_logo.svg" style="height:100px;" align="center"/><h1 align="center">Welcome to barSync 👋</h1>
+<img src="/client/src/assets/barSync_logo.svg" style="height:100px;" align="center"/>
+
+<h1 align="center">Welcome to barSync 👋</h1>
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />

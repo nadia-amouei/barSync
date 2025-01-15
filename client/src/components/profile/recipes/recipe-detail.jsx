@@ -24,12 +24,12 @@ function RecipeDetail() {
       const arrOfIds = favorites.map((el) => el.idDrink);
       setFavoriteIds(arrOfIds);
     }
-    if (favorites.length && favoriteIds.includes(Number(drinkId))) {
+    if (favoriteIds.includes(Number(drinkId))) {
       setFavorited(true);
     } else {
       setFavorited(false);
     }
-  }, []);
+  }, [favorited]);
 
   async function getDrinkDetails(drinkId) {
     const url = "http://localhost:3000/recipedetail/" + drinkId;

@@ -45,6 +45,7 @@ body {
   height: 100%;
   padding: 0.25vh;
 }
+
 .nav-buttons {
   width: 50vw;
   display: flex;
@@ -52,7 +53,7 @@ body {
   align-items: center;
 }
 
-.nav-button {
+.nav-button, .login-button {
   background-color: var(--primary-button);
   border: none;
   border-radius: 8px;
@@ -67,6 +68,16 @@ body {
 
 .nav-button:hover {
   background-color: var(--primary-accent);
+}
+
+.login-button {
+  background-color: var(--secondary-button);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: var(--secondary-accent);
 }
 
 .profile-container {
@@ -278,4 +289,94 @@ body {
   /* border: 1px solid pink; */
   width: 100%;
   margin-top: 2vh;
+}
+
+.login-register {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  border: 1px solid #313131;
+  background-color: #333;
+  border-radius: 8px;
+  margin: 20px auto; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+h1 {
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.form-group {
+  width: 100%;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input {
+  min-width: 400px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: gray;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+input:focus {
+  border-color: #333;
+  outline: none;
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: var(--secondary-button);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form-button:hover {
+  border: 1px solid var(--secondary-button);
+}
+
+.switch-to-register {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary-button);
+  font-size: medium;
+}
+
+.switch-to-register:hover {
+  text-decoration: underline;
+}
+
+.margin-top {
+  margin-top: 8px;
+}
+
+.error-message {
+  color: red;
 }
